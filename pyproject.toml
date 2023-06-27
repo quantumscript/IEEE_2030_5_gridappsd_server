@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "gridappsd-2030_5"
+version = "0.0.2a12"
+description = ""
+authors = ["C. Allwardt <3979063+craig8@users.noreply.github.com>"]
+packages = [
+    { include = "ieee_2030_5" }
+]
+license = "BSD-3-Clause"
+maintainers = [
+    "C. Allwardt <3979063+craig8@users.noreply.github.com>"
+]
+readme = "README.md"
+homepage = "https://github.com/GRIDAPPSD/gridappsd-2030_5"
+repository = "https://github.com/GRIDAPPSD/gridappsd-2030_5"
+documentation = "https://github.com/GRIDAPPSD/gridappsd-2030_5"
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pvlib = "^0.9.0"
+# gridappsd-python = {path = "../gridappsd-python", develop = true}
+Flask = "^2.0.3"
+pickleDB = "^0.9.2"
+xsdata = {extras = ["cli"], version = "^22.3"}
+tzlocal = "^4.2"
+cryptography = "^37.0.2"
+pyOpenSSL = "^22.0.0"
+# gridappsd-python = {git = "https://github.com/GRIDAPPSD/gridappsd-python.git", rev = "develop"}
+simplekv = "^0.14.1"
+dataclasses-json = "^0.5.7"
+Flask-Sessions = "^0.1.5"
+gevent = "^22.10.2" # CHANGED MAY 30, 2023 FROM: gevent = "^21.12.0" 
+trio = "^0.21.0"
+grequests = "^0.6.0"
+flask-talisman = "^1.0.0"
+gridappsd-cim-lab = {extras = ["gridappsd-python"], version = "^0.11.230210"}
+gridappsd-python = "^2.7.230209"
+blinker = "^1.5"
+nicegui = "^1.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+m2r2 = "^0.3.2"
+pytest = "^7.1.3"
+pycallgraph2 = "^1.1.3"
+pytest-describe = "^2.1.0"
+pre-commit = "^2.17.0"
+yapf = "^0.32.0"
+
+ [tool.pytest.ini_options]
+ addopts="-s"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.yapfignore]
+ignore_patterns = [
+    ".venv/**",
+    ".pytest_cache/**",
+    "dist/**",
+    "docs/**"
+]
+
+[tool.yapf]
+based_on_style = "pep8"
+spaces_before_comment = 4
+column_limit = 99
+split_before_logical_operator = true
+
+
+[tool.poetry.scripts]
+2030_5_ctl = 'ieee_2030_5.control:_main'
+2030_5_server = 'ieee_2030_5.__main__:_main'
+2030_5_shutdown = 'ieee_2030_5.__main__:_shutdown'
+2030_5_proxy = 'ieee_2030_5.basic_proxy:_main'
+2030_5_cert = 'ieee_2030_5.certs:_main'
+2030_5_gridappsd = 'ieee_2030_5.config_setup:_main'
