@@ -2,7 +2,7 @@
 ---
 #server_hostname: 0.0.0.0:8443
 
-server: 10.0.2.3
+server: fd99:d694:f603:27ad:f8b9:8dff:fe27:c681 # CHANGED!!! June 27
 # Only include if we need to have dcap be available
 http_port: 8080     # UNCOMMENTED 31 MAY... TESTING ACCESS
 https_port: 7443

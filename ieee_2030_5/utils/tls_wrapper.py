@@ -120,6 +120,7 @@ class OpensslWrapper(TLSWrap):
 
     @staticmethod
     def tls_create_ca_certificate(common_name: str, private_key_file: Path, ca_cert_file: Path):
+        print("I**************** IN tls_wrapper.py: tls_create_ca_certificate()")
         OpensslWrapper.__set_cnf_from_cert_path___(ca_cert_file)
         # openssl req -new -x509 -days 3650 -config openssl.cnf \
         #   -extensions v3_ca -key private/ec-cakey.pem -out certs/ec-cacert.pem

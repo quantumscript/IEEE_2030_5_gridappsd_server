@@ -144,7 +144,9 @@ def _main():
                         help="Run the server in a threaded environment.")
     opts = parser.parse_args()
 
-    logging_level = logging.DEBUG if opts.debug else logging.INFO
+    # logging_level = logging.DEBUG if opts.debug else logging.INFO  # COMMENTED!!! June 27
+    logging_level = logging.INFO # ADDED!!! June 24
+    
     logging.basicConfig(level=logging_level)
 
     os.environ["IEEE_2030_5_CONFIG_FILE"] = str(
@@ -197,7 +199,8 @@ def _main():
         # p = Process(target = _run_ui)
         # p.daemon = True
         # p.start()
-                
+        print("************ IN __main__.py: main() *************")
+    
         run_server(config,
                     tls_repo,
                     end_devices,

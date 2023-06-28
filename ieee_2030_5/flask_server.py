@@ -380,13 +380,16 @@ def run_server(config: ServerConfiguration, tlsrepo: TLSRepository, enddevices: 
                **kwargs):
     app = __build_app__(config, tlsrepo)
     ssl_context = __build_ssl_context__(tlsrepo)
+    print("************ IN flask_server.py: run_server() *************")
 
     try:
         host, port = config.server_hostname.split(":")
     except ValueError:
         # host and port not available
-        host = config.server_hostname
-        port = 8443
+        # host = config.server_hostname   # COMMENTED!!! June 27
+        # port = 8443                     # COMMENTED!!! June 27
+        host = config.server              # ADDED!!! JUNE 27
+        port = config.https_port          # ADDED!!! JUNE 27
 
     if config.http_port is not None:
         http_app = __build_http_app__(config=config)
@@ -395,7 +398,7 @@ def run_server(config: ServerConfiguration, tlsrepo: TLSRepository, enddevices: 
     PeerCertWSGIRequestHandler.tlsrepo = tlsrepo
 
     run_app(app=app, host=host, ssl_context=ssl_context, port=port, request_handler=PeerCertWSGIRequestHandler, **kwargs)
-    
+
 
 def build_server(config: ServerConfiguration, tlsrepo: TLSRepository, **kwargs) -> BaseWSGIServer:
 
