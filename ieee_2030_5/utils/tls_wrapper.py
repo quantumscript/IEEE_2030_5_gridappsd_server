@@ -136,7 +136,11 @@ class OpensslWrapper(TLSWrap):
     @staticmethod
     def tls_create_csr(common_name: str, private_key_file: Path, server_csr_file: Path):
         OpensslWrapper.__set_cnf_from_cert_path___(private_key_file)
-        subject_name = common_name.split(":")[0]
+        subject_name = common_name.split(":")[0]  # JUNE 28, CAUSING ISSUES W/ IPV6 ADDR AS HOSTNAME
+
+        if (subject_name == "fd99"):    # ADDED!!! JUNE 28
+            subject_name = "fd99:d694:f603:27ad:f8b9:8dff:fe27:c681"   # ADDED!!! JUNE 28
+
         # openssl req -new -key server.key -out server.csr -sha256
         cmd = [
             "openssl", "req", "-new", "-config",
@@ -154,7 +158,11 @@ class OpensslWrapper(TLSWrap):
                                       cert_file: Path,
                                       as_server: bool = False):
         OpensslWrapper.__set_cnf_from_cert_path___(cert_file)
-        subject_name = common_name.split(":")[0]
+        subject_name = common_name.split(":")[0]     # JUNE 28, CAUSING ISSUES W/ IPV6 ADDR AS HOSTNAME
+       
+        if (subject_name == "fd99"):    # ADDED!!! JUNE 28
+            subject_name = "fd99:d694:f603:27ad:f8b9:8dff:fe27:c681"   # ADDED!!! JUNE 28
+
         csr_file = Path(f"/tmp/{common_name}")
         OpensslWrapper.tls_create_csr(common_name, private_key_file, csr_file)
         # openssl ca -keyfile /root/tls/private/ec-cakey.pem -cert /root/tls/certs/ec-cacert.pem \

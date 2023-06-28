@@ -41,13 +41,13 @@ certs           = $dir/certs            # Where the issued certs are kept
 database        = $dir/index.txt        # database index file.
                                         # several certs with same subject.
 new_certs_dir   = $dir/certs            # default place for new certs.
-certificate     = $dir/certs/ec-cacert.pem       # The CA certificate # COMMENTED!!! JUNE 27
-# certificate     = $dir/certs/ca.pem       # The CA certificate # ADDED!!! JUNE 27
+# certificate     = $dir/certs/ec-cacert.pem       # The CA certificate # COMMENTED!!! JUNE 27
+certificate     = $dir/certs/ca.pem       # The CA certificate # ADDED!!! JUNE 27
 serial          = $dir/serial           # The current serial number
 crlnumber       = $dir/crlnumber        # the current crl number
                                         # must be commented out to leave a V1 CRL
-private_key     = $dir/private/ec-cakey.pem # The private key # COMMENTED!!! JUNE 27
-# private_key     = $dir/private/ca.pem # The private key  # ADDED!!! JUNE 27
+# private_key     = $dir/private/ec-cakey.pem # The private key # COMMENTED!!! JUNE 27
+private_key     = $dir/private/ca.pem # The private key  # ADDED!!! JUNE 27
 
 name_opt        = ca_default            # Subject Name options
 cert_opt        = ca_default            # Certificate field options
