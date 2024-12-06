@@ -24,7 +24,7 @@ Flask = "^2.0.3"
 pickleDB = "^0.9.2"
 xsdata = {extras = ["cli"], version = "^22.3"}
 tzlocal = "^4.2"
-cryptography = "^37.0.2"
+cryptography = "^43.0.3"
 pyOpenSSL = "^22.0.0"
 # gridappsd-python = {git = "https://github.com/GRIDAPPSD/gridappsd-python.git", rev = "develop"}
 simplekv = "^0.14.1"
