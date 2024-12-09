@@ -30,7 +30,7 @@ pyOpenSSL = "^22.0.0"
 simplekv = "^0.14.1"
 dataclasses-json = "^0.5.7"
 Flask-Sessions = "^0.1.5"
-gevent = "^22.10.2" # CHANGED MAY 30, 2023 FROM: gevent = "^21.12.0" 
+gevent = "^23.9.0"
 trio = "^0.21.0"
 grequests = "^0.6.0"
 flask-talisman = "^1.0.0"
@@ -38,7 +38,6 @@ gridappsd-cim-lab = {extras = ["gridappsd-python"], version = "^0.11.230210"}
 gridappsd-python = "^2.7.230209"
 blinker = "^1.5"
 nicegui = "^1.2.1"
-# docutils = "==0.21"
 
 
 [tool.poetry.group.dev.dependencies]
