@@ -17,7 +17,7 @@ documentation = "https://github.com/GRIDAPPSD/gridappsd-2030_5"
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.9,<4.0"
 pvlib = "^0.9.0"
 # gridappsd-python = {path = "../gridappsd-python", develop = true}
 Flask = "^2.0.3"
@@ -38,6 +38,7 @@ gridappsd-cim-lab = {extras = ["gridappsd-python"], version = "^0.11.230210"}
 gridappsd-python = "^2.7.230209"
 blinker = "^1.5"
 nicegui = "^1.2.1"
+# docutils = "==0.21"
 
 
 [tool.poetry.group.dev.dependencies]
