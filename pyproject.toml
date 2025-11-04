@@ -37,7 +37,7 @@ flask-talisman = "^1.0.0"
 gridappsd-cim-lab = {extras = ["gridappsd-python"], version = "^0.11.230210"}
 gridappsd-python = "^2.7.230209"
 blinker = "^1.5"
-nicegui = "^1.2.1"
+nicegui = "^3.0.0"
 
 
 [tool.poetry.group.dev.dependencies]

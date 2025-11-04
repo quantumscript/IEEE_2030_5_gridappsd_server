@@ -139,6 +139,18 @@ files = [
 frozenlist = ">=1.1.0"
 
 [[package]]
+name = "annotated-doc"
+version = "0.0.3"
+description = "Document parameters, class attributes, return types, and variables inline, with Annotated."
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "annotated_doc-0.0.3-py3-none-any.whl", hash = "sha256:348ec6664a76f1fd3be81f43dffbee4c7e8ce931ba71ec67cc7f4ade7fbbb580"},
+    {file = "annotated_doc-0.0.3.tar.gz", hash = "sha256:e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"},
+]
+
+[[package]]
 name = "annotated-types"
 version = "0.7.0"
 description = "Reusable constraint types to use with typing.Annotated"
@@ -666,23 +678,26 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "fastapi"
-version = "0.109.2"
+version = "0.121.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "fastapi-0.109.2-py3-none-any.whl", hash = "sha256:2c9bab24667293b501cad8dd388c05240c850b58ec5876ee3283c47d6e1e3a4d"},
-    {file = "fastapi-0.109.2.tar.gz", hash = "sha256:f3817eac96fe4f65a2ebb4baa000f394e55f5fccdaf7f75250804bc58f354f73"},
+    {file = "fastapi-0.121.0-py3-none-any.whl", hash = "sha256:8bdf1b15a55f4e4b0d6201033da9109ea15632cb76cf156e7b8b4019f2172106"},
+    {file = "fastapi-0.121.0.tar.gz", hash = "sha256:06663356a0b1ee93e875bbf05a31fb22314f5bed455afaaad2b2dad7f26e98fa"},
 ]
 
 [package.dependencies]
+annotated-doc = ">=0.0.2"
 pydantic = ">=1.7.4,<1.8 || >1.8,<1.8.1 || >1.8.1,<2.0.0 || >2.0.0,<2.0.1 || >2.0.1,<2.1.0 || >2.1.0,<3.0.0"
-starlette = ">=0.36.3,<0.37.0"
+starlette = ">=0.40.0,<0.50.0"
 typing-extensions = ">=4.8.0"
 
 [package.extras]
-all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.7)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
+all = ["email-validator (>=2.0.0)", "fastapi-cli[standard] (>=0.0.8)", "httpx (>=0.23.0,<1.0.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=3.1.5)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.18)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
+standard = ["email-validator (>=2.0.0)", "fastapi-cli[standard] (>=0.0.8)", "httpx (>=0.23.0,<1.0.0)", "jinja2 (>=3.1.5)", "python-multipart (>=0.0.18)", "uvicorn[standard] (>=0.12.0)"]
+standard-no-fastapi-cloud-cli = ["email-validator (>=2.0.0)", "fastapi-cli[standard-no-fastapi-cloud-cli] (>=0.0.8)", "httpx (>=0.23.0,<1.0.0)", "jinja2 (>=3.1.5)", "python-multipart (>=0.0.18)", "uvicorn[standard] (>=0.12.0)"]
 
 [[package]]
 name = "filelock"
@@ -1321,14 +1336,14 @@ files = [
 
 [[package]]
 name = "jinja2"
-version = "3.1.4"
+version = "3.1.6"
 description = "A very fast and expressive template engine."
 optional = false
 python-versions = ">=3.7"
 groups = ["main"]
 files = [
-    {file = "jinja2-3.1.4-py3-none-any.whl", hash = "sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d"},
-    {file = "jinja2-3.1.4.tar.gz", hash = "sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"},
+    {file = "jinja2-3.1.6-py3-none-any.whl", hash = "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"},
+    {file = "jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"},
 ]
 
 [package.dependencies]
@@ -1608,14 +1623,14 @@ files = [
 
 [[package]]
 name = "nicegui"
-version = "1.4.37"
+version = "3.0.0"
 description = "Create web-based user interfaces with Python. The nice way."
 optional = false
-python-versions = "<4.0,>=3.8"
+python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "nicegui-1.4.37-py3-none-any.whl", hash = "sha256:b63ae7cf89ace808fefba866b81514c59a04cff40447b6043640e259747179b6"},
-    {file = "nicegui-1.4.37.tar.gz", hash = "sha256:d55976d7c0c22a0797938cabc0ae534535b42aee9a6ce54d660be72628434f35"},
+    {file = "nicegui-3.0.0-py3-none-any.whl", hash = "sha256:abe958c99d75a2e9ab19de75f60130e70a098046b6cde5520c518a697b6167bc"},
+    {file = "nicegui-3.0.0.tar.gz", hash = "sha256:081248bc61f874ef0d40ffe8d0dc79da7b853bb2b8b2c2bfc7a52202760c7c1d"},
 ]
 
 [package.dependencies]
@@ -1623,28 +1638,30 @@ aiofiles = ">=23.1.0"
 aiohttp = ">=3.10.2"
 certifi = ">=2024.07.04"
 docutils = ">=0.19.0"
-fastapi = ">=0.109.1,<0.110.0"
+fastapi = ">=0.109.1"
+h11 = ">=0.16.0"
 httpx = ">=0.24.0"
 ifaddr = ">=0.2.0"
 itsdangerous = ">=2.1.2,<3.0.0"
-jinja2 = ">=3.1.4,<4.0.0"
+jinja2 = ">=3.1.6,<4.0.0"
 markdown2 = ">=2.4.7,<2.4.11 || >2.4.11"
 orjson = {version = ">=3.9.15", markers = "platform_machine != \"i386\" and platform_machine != \"i686\""}
 Pygments = ">=2.15.1,<3.0.0"
-python-multipart = ">=0.0.7"
+python-engineio = ">=4.12.0"
+python-multipart = ">=0.0.18"
 python-socketio = {version = ">=5.10.0", extras = ["asyncio-client"]}
-requests = ">=2.32.0"
+starlette = ">=0.45.3"
 typing-extensions = ">=4.0.0"
-urllib3 = ">=1.26.18,<2.0.0 || >2.0.0,<2.0.1 || >2.0.1,<2.0.2 || >2.0.2,<2.0.3 || >2.0.3,<2.0.4 || >2.0.4,<2.0.5 || >2.0.5,<2.0.6 || >2.0.6,<2.0.7 || >2.0.7,<2.1.0 || >2.1.0,<2.2.0 || >2.2.0,<2.2.1 || >2.2.1"
 uvicorn = {version = ">=0.22.0", extras = ["standard"]}
 vbuild = ">=0.8.2"
 watchfiles = ">=0.18.1"
 
 [package.extras]
-highcharts = ["nicegui-highcharts (>=1.0.1,<2.0.0)"]
+highcharts = ["nicegui-highcharts (>=2.0.2,<3.0.0)"]
 matplotlib = ["matplotlib (>=3.5.0,<4.0.0)"]
 native = ["pywebview (>=5.0.1,<6.0.0)"]
-plotly = ["plotly (>=5.13.0,<6.0.0)"]
+plotly = ["plotly (>=5.13,<7.0)"]
+redis = ["redis (>=4.0.0)"]
 sass = ["libsass (>=0.23.0,<0.24.0)"]
 
 [[package]]
@@ -2385,14 +2402,14 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-engineio"
-version = "4.10.1"
+version = "4.12.3"
 description = "Engine.IO server and client for Python"
 optional = false
 python-versions = ">=3.6"
 groups = ["main"]
 files = [
-    {file = "python_engineio-4.10.1-py3-none-any.whl", hash = "sha256:445a94004ec8034960ab99e7ce4209ec619c6e6b6a12aedcb05abeab924025c0"},
-    {file = "python_engineio-4.10.1.tar.gz", hash = "sha256:166cea8dd7429638c5c4e3a4895beae95196e860bc6f29ed0b9fe753d1ef2072"},
+    {file = "python_engineio-4.12.3-py3-none-any.whl", hash = "sha256:7c099abb2a27ea7ab429c04da86ab2d82698cdd6c52406cb73766fe454feb7e1"},
+    {file = "python_engineio-4.12.3.tar.gz", hash = "sha256:35633e55ec30915e7fc8f7e34ca8d73ee0c080cec8a8cd04faf2d7396f0a7a7a"},
 ]
 
 [package.dependencies]
@@ -2727,22 +2744,22 @@ pandas = ["pandas (>=1.3.5)"]
 
 [[package]]
 name = "starlette"
-version = "0.36.3"
+version = "0.49.3"
 description = "The little ASGI library that shines."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "starlette-0.36.3-py3-none-any.whl", hash = "sha256:13d429aa93a61dc40bf503e8c801db1f1bca3dc706b10ef2434a36123568f044"},
-    {file = "starlette-0.36.3.tar.gz", hash = "sha256:90a671733cfb35771d8cc605e0b679d23b992f8dcfad48cc60b38cb29aeb7080"},
+    {file = "starlette-0.49.3-py3-none-any.whl", hash = "sha256:b579b99715fdc2980cf88c8ec96d3bf1ce16f5a8051a7c2b84ef9b1cdecaea2f"},
+    {file = "starlette-0.49.3.tar.gz", hash = "sha256:1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"},
 ]
 
 [package.dependencies]
-anyio = ">=3.4.0,<5"
-typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
+anyio = ">=3.6.2,<5"
+typing-extensions = {version = ">=4.10.0", markers = "python_version < \"3.13\""}
 
 [package.extras]
-full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
+full = ["httpx (>=0.27.0,<0.29.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.18)", "pyyaml"]
 
 [[package]]
 name = "stomp-py"
@@ -3468,4 +3485,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9,<4.0"
-content-hash = "5c7eb995b83787edfe8db822157188b479cd369d2dce68ad7514a9db83090652"
+content-hash = "7580655ee82703fb6221adf99fcecb3de716b3568f4b3fe5f567a476fdd37f71"
