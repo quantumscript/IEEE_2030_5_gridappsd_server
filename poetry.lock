@@ -2434,20 +2434,20 @@ files = [
 
 [[package]]
 name = "python-socketio"
-version = "5.11.4"
+version = "5.14.0"
 description = "Socket.IO server and client for Python"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "python_socketio-5.11.4-py3-none-any.whl", hash = "sha256:42efaa3e3e0b166fc72a527488a13caaac2cefc76174252486503bd496284945"},
-    {file = "python_socketio-5.11.4.tar.gz", hash = "sha256:8b0b8ff2964b2957c865835e936310190639c00310a47d77321a594d1665355e"},
+    {file = "python_socketio-5.14.0-py3-none-any.whl", hash = "sha256:7de5ad8a55efc33e17897f6cf91d20168d3d259f98c38d38e2940af83136d6f8"},
+    {file = "python_socketio-5.14.0.tar.gz", hash = "sha256:d057737f658b3948392ff452a5c865c5ccc969859c37cf095a73393ce755f98e"},
 ]
 
 [package.dependencies]
 aiohttp = {version = ">=3.4", optional = true, markers = "extra == \"asyncio-client\""}
 bidict = ">=0.21.0"
-python-engineio = ">=4.8.0"
+python-engineio = ">=4.11.0"
 
 [package.extras]
 asyncio-client = ["aiohttp (>=3.4)"]
